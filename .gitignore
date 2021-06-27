@@ -1,0 +1,8 @@
+.vscode
+baseline
+*.ipynb
+.ipynb_checkpoints
+.gitmodules
+*.pyc
+__pycache__/
+.DS_Store
