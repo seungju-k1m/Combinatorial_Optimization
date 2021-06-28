@@ -1,5 +1,5 @@
-from NeuralCO.Config import NeuralCOCfg
-from NeuralCO.Player import Player
+from COP_RL.Config import NeuralCOCfg
+from COP_RL.Player import Player
 
 import argparse
 

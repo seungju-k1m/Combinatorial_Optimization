@@ -27,7 +27,7 @@ class Euclidean_2D_TSP_Env:
         nodeNum: int,
         resolution=0.5,
         distanceMat=None,
-        widHei=None
+        widHei=[1, 1]
     ):
         self._nodeNum = nodeNum
         self._resolution = resolution
@@ -96,7 +96,7 @@ class Euclidean_2D_TSP_Env:
                 plt.arrow(x_pos[policy[-1]], y_pos[policy[-1]], x_pos[policy[0]] -
                           x_pos[policy[-1]], y_pos[policy[0]] - y_pos[policy[-1]], width=0.008,
                           length_includes_head=True)
-                
+
                 plt.xlim(0, 1)
                 plt.ylim(0, 1)
                 plt.axis('scaled')

@@ -1,6 +1,6 @@
 from baseline.utils import getOptim, writeTrainInfo, setup_logger
 from baseline.baseAgent import baseAgent
-from NeuralCO.Config import NeuralCOCfg
+from COP_RL.Config import NeuralCOCfg
 from TSP.Env import Euclidean_2D_TSP_Env
 from datetime import datetime
 from itertools import count

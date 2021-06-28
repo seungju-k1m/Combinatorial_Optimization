@@ -16,7 +16,7 @@ Optional(Recommended)
 
     -----------------------------
 
-    git submodule add https://github.com/seungju-mmc/baseline.git
+    git clone https://github.com/seungju-mmc/baseline.git
     
     pip install -r requirements.txt
 

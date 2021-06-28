@@ -1,0 +1,117 @@
+{
+    "batchSize": 128,
+    "dimension": 128,
+    "nodeNum": 50,
+    "norm": 1,
+    "sum": false,
+    "lPath": "./logs/TSP_50/data.pth",
+    "device": "cuda:0",
+    "decay": 0.96,
+    "decayStep": 5000,
+    "loggingPath": "./logs",
+    "optim": {
+        "Actor": {
+            "name": "adam",
+            "lr": 1e-3
+        },
+        "Critic": {
+            "name": "adam",
+            "lr": 1e-3
+        }
+    },
+    "agent": {
+        "Embedding": {
+            "module00": {
+                "netCat": "CNN1D",
+                "iSize": 2,
+                "nLayer": 1,
+                "fSize": [
+                    1,
+                    -1
+                ],
+                "nUnit": [
+                    128
+                ],
+                "stride": [
+                    1
+                ],
+                "act": [
+                    "linear"
+                ],
+                "padding": [
+                    0
+                ],
+                "BN": [
+                    true
+                ],
+                "linear": true,
+                "input": [
+                    0
+                ],
+                "prior": 0,
+                "output": true
+            }
+        },
+        "Encoder": {
+            "module00": {
+                "netCat": "LSTMNET",
+                "iSize": 128,
+                "nLayer": 1,
+                "hiddenSize": 128,
+                "FlattenMode": false,
+                "device": "cuda:0",
+                "prior": 0,
+                "input": [
+                    0
+                ],
+                "output": true
+            }
+        },
+        "Decoder": {
+            "module00": {
+                "netCat": "LSTMNET",
+                "iSize": 128,
+                "nLayer": 1,
+                "hiddenSize": 128,
+                "FlattenMode": false,
+                "device": "cuda:0",
+                "prior": 0,
+                "input": [
+                    0
+                ],
+                "output": true
+            }
+        },
+        "GDecoder": {
+            "module00": {
+                "netCat": "MLP",
+                "nLayer": 2,
+                "iSize": 128,
+                "fSize": [
+                    128,
+                    1
+                ],
+                "act": [
+                    "relu",
+                    "linear"
+                ],
+                "prior": 0,
+                "BN": false,
+                "input": [
+                    0
+                ],
+                "output": true
+            }
+        }
+    },
+    "eval": {
+        "iter": 1280,
+        "temperature": 2.2,
+        "samplingMode": "Sampling",
+        "__descript_mode_": "Sampling or Greedy",
+        "plot": true,
+        "__description_plot": "If sampling is Greedy, it is always false",
+        "testSize": 10000
+    },
+    "plot_path": "./logs/TSP_50"
+}
